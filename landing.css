@@ -1,0 +1,43 @@
+body {
+    font-family: 'Noto Sans' , sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #5f9ea0e4;
+    backdrop-filter: blur(0px);
+}
+
+.title {
+    text-align: center;
+    padding-top: 25vh;
+    font-size: 60px;
+}
+
+.title-container {
+    margin-bottom: 20vh;
+}
+
+.title-button {
+    margin-top: 10vh;
+    margin-left: 80vh;
+    padding: 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    width: 35vh;
+    font-size: 16px;
+    transition: 0.5s ease ;
+    background-color: #2b3453	;
+    color: white;
+}
+
+.title-button:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+.desc-title {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10vh;
+}

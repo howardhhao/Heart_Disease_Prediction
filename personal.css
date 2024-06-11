@@ -1,0 +1,52 @@
+body {
+    font-family: 'Noto Sans' , sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.personal-details-card {
+    border-radius: 25px;
+    background-color: #AFE1AF;
+    width: 70%;
+    padding: 30px;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+}
+
+.select-box {
+    border-radius: 15px;
+    padding: 15px;
+    border: none;
+    width: 90%;
+
+}
+
+.field-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+.personal-details-box {
+    margin-top: 10vh;
+    margin-left: 7vh;
+}
+
+.ctn-btn {
+    border: none;
+    font-size: 16px;
+    border-radius: 15px;
+    padding: 15px;
+    margin-left: 20vh;
+    width: 60%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.ctn-btn:hover {
+    background-color: black;
+    color: #fff;
+
+}
+

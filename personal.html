@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal</title>
+    <link rel="stylesheet" href="personal.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="landing.html">Heart Disease Checker</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="personal.html">Get A Test</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Information</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div class="personal-details-card">
+            <p class="field-title">Personal Information</p>
+            <div class="personal-details-box">
+                <form id="heartDiseaseForm">
+                <select class="select-box" id="gender" name="gender" required>
+                    <option disabled selected>Select gender</option>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select><br><br>
+    
+                <input placeholder="Enter age" class="select-box" type="number" id="age" name="age" required><br><br>
+    
+                <select class="select-box" id="education" name="education" required>
+                    <option disabled selected>Select education level</option>
+                    <option value="1">Primary School</option>
+                    <option value="2">Secondary School</option>
+                    <option value="3">College</option>
+                    <option value="4">Univesity</option>
+                    <option value="5">Post-graduate Studies</option>
+                    <option value="6">Graduated</option>
+                </select><br><br>
+
+
+                
+        <select class="select-box"  id="currentSmoker" name="currentSmoker" required>
+            <option disabled selected>Current smoker?</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <input class="select-box" type="number" id="cigsPerDay" name="cigsPerDay" placeholder="Average number of cigarettes per day" required><br><br>
+
+        <select class="select-box" id="BPMeds" name="BPMeds" required>
+            <option disabled selected>Are you on blood pressure medications?</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <select class="select-box" id="prevalentStroke" name="prevalentStroke" required>
+            <option disabled selected>Have you had a stroke?</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <select class="select-box" id="prevalentHyp" name="prevalentHyp" required>
+            <option disabled selected>Do you have prevalent hypertension?</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <select class="select-box" id="diabetes" name="diabetes" required>
+            <option disabled selected>Do you have diabetes?</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <input placeholder="Total Cholesterol (mg/dL)" class="select-box" type="number" id="totChol" name="totChol" required><br><br>
+
+        <input class="select-box" placeholder="ystolic Blood Pressure (mmHg)" type="number" id="sysBP" name="sysBP" required><br><br>
+
+        <input class="select-box" placeholder="Diastolic Blood Pressure (mmHg)" type="number" id="diaBP" name="diaBP" required><br><br>
+
+        <input class="select-box" placeholder="Body Mass Index (BMI)" type="number" id="BMI" name="BMI" required><br><br>
+
+        <input class="select-box" placeholder="Heart Rate (bpm)" type="number" id="heartRate" name="heartRate" required><br><br>
+        <input class="select-box" placeholder="Glucose (mg/dL)" type="number" id="glucose" name="glucose" required><br><br>
+
+        <input style="margin-left: 250px;" type="checkbox" id="thankYouCheckbox" required>
+                <label style=" font-size: 15px;" for="thankYouCheckbox">By ticking this, you accept the terms and conditions</label>
+                <br><br>
+
+        <button class="ctn-btn">Check Risk</button>
+    </form>
+    
+            </div>
+    </div>
+   
+</body>
+
+<script>
+    document.getElementById('heartDiseaseForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+        const jsonData = {};
+
+        formData.forEach((value, key) => {
+            jsonData[key] = value;
+        });
+
+        const response = await fetch('http://127.0.0.1:5000/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData)
+        });
+
+        const result = await response.json();
+
+        document.getElementById('result').innerText = `Heart Disease Risk: ${(result.prediction)}`;
+    });
+</script>
+</html>
