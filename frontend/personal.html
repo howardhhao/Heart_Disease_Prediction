@@ -36,9 +36,32 @@
 
     <div style="display: flex; justify-content: center; align-items: center;">
         <div class="personal-details-card">
-            <p class="field-title">Personal Information</p>
+            <p class="field-title">Input key health metrics and lifestyle factors to receive personalized risk assessment</p>
             <div class="personal-details-box">
                 <form id="heartDiseaseForm">
+
+                    <p style="font-weight: bold;">Personal Information
+                        <span class="info-icon" onclick="showPopup()">&#9432;</span>
+                    </p>
+                    
+                    <div class="popup-overlay" id="popup-overlay"></div>
+                    <div class="popup" id="popup">
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Gender</p>
+                        <p>Men are generally at a higher risk for heart disease. Men tend to develop heart disease about 10 years earlier than women.</p>
+                        <p>Women have an increased risk after menopause due to a decline in estrogen levels.</p>
+
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Age</p>
+                        <p>The risk increases as people get older, due to the accumulation of risk factors over time, age-related changes in the heart and blood vessels.</p>
+
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Education</p>
+                        <p>Individuals with higher education levels often have better access to healthcare, healthier lifestyles, and a greater awareness of heart disease risk factors. </p>
+
+                        <div class="close-btn">
+                            <button class="close-btn-pop-out" onclick="closePopup()">Close</button>
+                        </div>
+                    </div>
+
+                    <hr style="width: 110vh; height: 5px;">
                 <select class="select-box" id="gender" name="gender" required>
                     <option disabled selected>Select gender</option>
                     <option value="0">Female</option>
@@ -58,7 +81,21 @@
                 </select><br><br>
 
 
-                
+                <p style="font-weight: bold;">Personal Habits
+                    <span class="info-icon" onclick="showPopup1()">&#9432;</span>
+                    </p>
+                   
+                    <div class="popup-overlay" id="popup-overlay1"></div>
+                    <div class="popup" id="popup1">
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Smoking</p>
+                        <p>Smoking damages the lining of the arteries, leading to atherosclerosis (hardening and narrowing of the arteries).</p>
+                        <p>It increases blood pressure, reduces oxygen in the blood, and raises heart rate, making the heart work harder.</p>
+                        <div class="close-btn">
+                            <button class="close-btn-pop-out" onclick="closePopup1()">Close</button>
+                        </div>
+                    </div>
+                </p>
+                <hr style="width: 110vh; height: 5px;">
         <select class="select-box"  id="currentSmoker" name="currentSmoker" required>
             <option disabled selected>Current smoker?</option>
             <option value="0">No</option>
@@ -73,6 +110,25 @@
             <option value="1">Yes</option>
         </select><br><br>
 
+        <p style="font-weight: bold;">Past Experiences
+            <span class="info-icon" onclick="showPopup2()">&#9432;</span>
+                    </p>
+                    
+                    <div class="popup-overlay" id="popup-overlay2"></div>
+                    <div class="popup" id="popup2">
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Stroke</p>
+                        <p>Stroke occurs when the blood supply to part of the brain is interrupted or reduced, preventing brain tissue from getting oxygen and nutrients. This can lead to brain damage and loss of function.</p>
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Hypertension</p>
+                        <p>Hypertension, or high blood pressure, increases the force of blood against artery walls, which can lead to damage over time. It is a major risk factor for both ischemic and hemorrhagic stroke.</p>
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Diabetes</p>
+                        <p>Diabetes affects how the body processes glucose, leading to high blood sugar levels. Over time, high glucose levels can damage blood vessels and nerves.</p>
+                        
+                        <div class="close-btn">
+                            <button class="close-btn-pop-out" onclick="closePopup2()">Close</button>
+                        </div>
+                    </div>
+        </p>
+        <hr style="width: 110vh;">
         <select class="select-box" id="prevalentStroke" name="prevalentStroke" required>
             <option disabled selected>Have you had a stroke?</option>
             <option value="0">No</option>
@@ -91,9 +147,35 @@
             <option value="1">Yes</option>
         </select><br><br>
 
+        <p style="font-weight: bold;">Key Index Measurement
+            <span class="info-icon" onclick="showPopup3()">&#9432;</span>
+                    </p>
+                    
+                    <div class="popup-overlay" id="popup-overlay3"></div>
+                    <div class="popup" id="popup3">
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Cholesterol</p>
+                        <p>Cholesterol is a fatty substance found in the blood. High levels of low-density lipoprotein (LDL, or "bad" cholesterol) can lead to plaque buildup in arteries (atherosclerosis), increasing the risk of heart disease and stroke. High-density lipoprotein (HDL, or "good" cholesterol) helps remove LDL from the bloodstream.</p>
+
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Blood Pressure</p>
+                        <p>Normal SBP is less than 120 mmHg and normal DBP is less than 80 mmHg. </p>
+
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">BMI</p>
+                        <p>A normal BMI ranges from 18.5 to 24.9. Overweight is defined as a BMI of 25-29.9, and obesity is defined as a BMI of 30 or higher.</p>
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Heartbeat Rate</p>
+                        <p>A normal RHR for adults ranges from 60 to 100 beats per minute. Athletes might have a lower RHR (Resting Heart Rate).</p>
+
+                        <p style="font-weight: bold; font-style: italic; font-size: 20px;">Blood Glucose Level</p>
+                        <p>Fasting blood glucose should be below 100 mg/dL. Prediabetes is indicated by levels from 100 to 125 mg/dL, and diabetes is diagnosed with levels of 126 mg/dL or higher.</p>
+                        <div class="close-btn">
+                            <button class="close-btn-pop-out" onclick="closePopup3()">Close</button>
+                        </div>
+                    </div>
+        </p>
+        <hr style="width: 110vh; height: 5px;">
+
         <input placeholder="Total Cholesterol (mg/dL)" class="select-box" type="number" id="totChol" name="totChol" required><br><br>
 
-        <input class="select-box" placeholder="ystolic Blood Pressure (mmHg)" type="number" id="sysBP" name="sysBP" required><br><br>
+        <input class="select-box" placeholder="Systolic Blood Pressure (mmHg)" type="number" id="sysBP" name="sysBP" required><br><br>
 
         <input class="select-box" placeholder="Diastolic Blood Pressure (mmHg)" type="number" id="diaBP" name="diaBP" required><br><br>
 
@@ -136,6 +218,48 @@
         const result = await response.json();
 
         document.getElementById('result').innerText = `Heart Disease Risk: ${(result.prediction)}`;
+
+        
     });
+
+    function showPopup() {
+        document.getElementById('popup-overlay').style.display = 'block';
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popup-overlay').style.display = 'none';
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    function showPopup1() {
+        document.getElementById('popup-overlay1').style.display = 'block';
+        document.getElementById('popup1').style.display = 'block';
+    }
+
+    function closePopup1() {
+        document.getElementById('popup-overlay1').style.display = 'none';
+        document.getElementById('popup1').style.display = 'none';
+    }
+
+    function showPopup2() {
+        document.getElementById('popup-overlay2').style.display = 'block';
+        document.getElementById('popup2').style.display = 'block';
+    }
+
+    function closePopup2() {
+        document.getElementById('popup-overlay2').style.display = 'none';
+        document.getElementById('popup2').style.display = 'none';
+    }
+
+    function showPopup3() {
+        document.getElementById('popup-overlay3').style.display = 'block';
+        document.getElementById('popup3').style.display = 'block';
+    }
+
+    function closePopup3() {
+        document.getElementById('popup-overlay3').style.display = 'none';
+        document.getElementById('popup3').style.display = 'none';
+    }
 </script>
 </html>

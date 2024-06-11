@@ -6,11 +6,12 @@ body {
 
 .personal-details-card {
     border-radius: 25px;
-    background-color: #AFE1AF;
+    background-color: #5f9ea0e4;
     width: 70%;
     padding: 30px;
     margin-top: 15vh;
     margin-bottom: 15vh;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.3);
 }
 
 .select-box {
@@ -24,7 +25,7 @@ body {
 .field-title {
     text-align: center;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 22px;
     padding-top: 20px;
 }
 
@@ -48,5 +49,56 @@ body {
     background-color: black;
     color: #fff;
 
+}
+
+.info-icon {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 20px;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    
+}
+
+.close-btn {
+    display: block;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.close-btn-pop-out {
+    border: none;
+    border-radius: 18px;
+    padding: 13px;
+    background-color: rgb(198, 196, 196);
+
+}
+
+.close-btn-pop-out:hover {
+    background-color: black;
+    color: #fff;
 }
 
