@@ -102,3 +102,18 @@ body {
     color: #fff;
 }
 
+.popup-content {
+    position: relative;
+    
+  }
+  
+  .close-icon {
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .alert-icon {
+    cursor: pointer;
+  }
+

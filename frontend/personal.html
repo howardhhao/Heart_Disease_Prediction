@@ -36,7 +36,17 @@
 
     <div style="display: flex; justify-content: center; align-items: center;">
         <div class="personal-details-card">
-            <p class="field-title">Input key health metrics and lifestyle factors to receive personalized risk assessment</p>
+            <p class="field-title">Input key health metrics and lifestyle factors to receive personalized risk assessment
+                <span class="alert-icon" onclick="togglePopup()">🔔</span>
+                </p>
+                
+                <div class="popup" id="popupTitle">
+                  <div class="popup-content">
+                    <span class="close-icon" onclick="togglePopup()">✖️</span>
+                    <p style="font-weight: bold; font-style: italic; font-size: 20px;">Disclaimer</p>
+                    <p>This tool just provides a preliminary assessment of your risk of heart disease. Remember, it's essential to regularly check up with your <strong>doctor</strong> for a comprehensive evaluation of your health.</p>
+                  </div>
+                </div>
             <div class="personal-details-box">
                 <form id="heartDiseaseForm">
 
@@ -261,5 +271,11 @@
         document.getElementById('popup-overlay3').style.display = 'none';
         document.getElementById('popup3').style.display = 'none';
     }
+
+    function togglePopup() {
+  var popup = document.getElementById("popupTitle");
+  popup.style.display = (popup.style.display === "block") ? "none" : "block";
+}
+
 </script>
 </html>
