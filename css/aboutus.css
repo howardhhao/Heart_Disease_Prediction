@@ -1,0 +1,36 @@
+body {
+    font-family: 'Noto Sans' , sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #5f9ea0e4;
+    backdrop-filter: blur(40px);
+}
+.containerr {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: justify;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 800px;
+    background-color: white;
+  }
+  
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  

@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #5f9ea0e4;
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(40px);
 }
 
 .title {
